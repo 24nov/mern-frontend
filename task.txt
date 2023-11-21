@@ -1,1 +1,22 @@
+Example for the fetch using the clientApi
 
+import { useEffect } from 'react'
+import './App.css'
+import { useState } from 'react'
+import { apiClient } from './utils/client'
+
+function App() {
+  const [product, setProduct] = useState([])
+
+  useEffect(() => {
+    async function fetchD() {
+      const response = await apiClient.get('todos')
+      console.log(response.data)
+    }
+    fetchD()
+  }, [])
+
+  return <></>
+}
+
+export default App
